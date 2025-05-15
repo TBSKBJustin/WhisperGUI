@@ -23,7 +23,7 @@
 - Python 3.10 – 3.13 [Python](https://www.python.org/downloads/)
 - Pip command support [Pip](https://pip.pypa.io/en/stable/installation/)
 - Git command support [Git](https://github.com/git-guides/install-git)
-- [Optional] NVIDIA GPU with CUDA 11.8+ for GPU acceleration
+- [Optional] NVIDIA GPU with CUDA 11.8+ for GPU acceleration [Cuda](https://developer.nvidia.com/cuda-toolkit)
 
 ---
 
