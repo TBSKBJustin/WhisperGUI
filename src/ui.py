@@ -1,27 +1,36 @@
 # ui.py
-import os
-import sys
-import tkinter as tk
+import os, sys, ctypes, tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import threading
 from translations import UI_TEXT
 from transcriber import transcribe
 
+
 class WhisperGUI(tk.Tk):
     def __init__(self):
         super().__init__()
-                # ——— 设置窗口图标 ———
+
+        # ─── 1) Set explicit AppUserModelID  (task‑bar icon) ───
         try:
-            # 支持 PyInstaller 打包后从临时路径加载资源
-            if getattr(sys, 'frozen', False):
+            myappid = u"Whisper.GUI.v0.1"        # any unique string
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        except Exception:
+            pass                                 # non‑Windows – silently ignore
+
+        # ─── 2) Locate icon.ico and apply to window ───
+        try:
+            if getattr(sys, "frozen", False):        # PyInstaller
                 base_path = sys._MEIPASS
             else:
-                base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-            icon_path = os.path.join(base_path, 'resources', 'icon.ico')
-            self.iconbitmap(icon_path)
+                base_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+            icon_path = os.path.join(base_path, "resources", "icon.ico")
+            if os.path.exists(icon_path):
+                self.iconbitmap(icon_path)
         except Exception as e:
             print("Icon load failed:", e)
-        self.ui_lang = 'zh'
+
+        # … the rest of your original __init__ …
+        self.ui_lang = "zh"
         self._build_ui()
 
     def _build_ui(self):
@@ -81,7 +90,7 @@ class WhisperGUI(tk.Tk):
 
     def _show_about(self):
         messagebox.showinfo(self.texts['about_title'],
-                            f"{self.texts['about_title']}\nWhisper GUI v0.1\nAuthor: Justin")
+                            f"{self.texts['about_title']}\nWhisper GUI v0.0.2\nAuthor: Justin")
 
     def _browse_file(self):
         p = filedialog.askopenfilename(

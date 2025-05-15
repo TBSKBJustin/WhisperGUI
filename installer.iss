@@ -2,7 +2,7 @@
 
 [Setup]
 AppName=Whisper GUI
-AppVersion=0.1
+AppVersion=0.0.2
 DefaultDirName={pf}\Whisper GUI
 DefaultGroupName=Whisper GUI
 ArchitecturesInstallIn64BitMode=x64
@@ -48,14 +48,14 @@ begin
   else
     PyPage := CreateInputOptionPage(
       wpWelcome, 'Select PyTorch Version', 'Choose the PyTorch build you want',
-      'CPU‑only build is smaller; GPU build needs ~1.5 GB download', True, False);
+      'CPU‑only build is smaller; GPU build needs ~6 GB download', True, False);
 
   if IsCN then begin
-    PyPage.Add('CPU‑only（≈200 MB）');
-    PyPage.Add('GPU 版（CUDA，≈1.5 GB）');
+    PyPage.Add('CPU‑only（≈1.5 GB）');
+    PyPage.Add('GPU 版（CUDA，≈6 GB）');
   end else begin
-    PyPage.Add('CPU‑only (≈200 MB)');
-    PyPage.Add('GPU‑enabled (CUDA, ≈1.5 GB)');
+    PyPage.Add('CPU‑only (≈1.5 GB)');
+    PyPage.Add('GPU‑enabled (CUDA, ≈6 GB)');
   end;
 
   PyPage.Values[0] := True;
