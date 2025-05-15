@@ -1,5 +1,9 @@
 # Whisper GUI
 
+<p align="center">
+  <img src="resources/icon.png" width="96" height="96" alt="Whisper GUI Icon">
+</p>
+
 **Whisper GUI** is a lightweight desktop application for transcribing audio and video files using OpenAI's Whisper model — no command-line knowledge required.
 
 - 🎧 Supports MP4, MP3, WAV, FLAC, M4A, and more
@@ -47,23 +51,6 @@ This GUI wraps the [OpenAI Whisper](https://github.com/openai/whisper) speech re
   - Whisper runs through a **dedicated Python venv**
   - Transcription output is saved to `.txt`, `.srt`, or `.vtt` formats
 - No external tools needed (FFmpeg is handled via `ffmpeg-python`)
-
----
-
-## 🗂 File Structure (Post-install)
-
-Whisper GUI/
-├─ WhisperGUI.exe ← Lightweight launcher (~7MB)
-├─ venv/ ← Python virtual environment
-├─ src/ ← Full Python source code
-│ ├─ main.py
-│ ├─ ui.py
-│ ├─ transcriber.py
-│ └─ translations.py
-├─ resources/
-│ └─ icon.ico
-└─ install_log.txt ← Install output log (in case of issues)
-
 
 ---
 
