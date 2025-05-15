@@ -4,6 +4,8 @@
   <img src="resources/icon.png" width="96" height="96" alt="Whisper GUI Icon">
 </p>
 
+> 🇺🇸 [English Documentation](current) | 📘 [简体中文]（./README_zh.md）
+
 **Whisper GUI** is a lightweight desktop application for transcribing audio and video files using OpenAI's Whisper model — no command-line knowledge required.
 
 - 🎧 Supports MP4, MP3, WAV, FLAC, M4A, and more
