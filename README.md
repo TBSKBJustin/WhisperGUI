@@ -52,7 +52,7 @@
   <img src="GitHub/GUI.png" width="600" alt="Whisper GUI Screenshot">
 </p>
 
-### 🧭 English Instructions
+### 🧭 Instructions
 
 1. **Select source file**  
    Click the top-right `Browse...` to select an audio or video file (e.g., `.mp3`, `.mp4`, `.wav`...).
