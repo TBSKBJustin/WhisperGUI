@@ -49,7 +49,7 @@
 ## 🧪 如何使用
 
 <p align="center">
-  <img src="resources/GUI_zh.png" width="600" alt="Whisper GUI 截屏">
+  <img src="GitHub/GUI_zh.png" width="600" alt="Whisper GUI 截屏">
 </p>
 
 ### 🧭 使用说明（中文）

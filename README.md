@@ -49,7 +49,7 @@
 ## 🧪 How to Use
 
 <p align="center">
-  <img src="resources/GUI.png" width="600" alt="Whisper GUI Screenshot">
+  <img src="GitHub/GUI.png" width="600" alt="Whisper GUI Screenshot">
 </p>
 
 ### 🧭 English Instructions
