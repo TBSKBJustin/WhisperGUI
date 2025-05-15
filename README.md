@@ -18,7 +18,9 @@
 
 - Windows 10 or 11 (64-bit)
 - Internet connection (for one-time dependency download)
-- Python 3.10 – 3.13 (Python 3.13 embedded via virtual environment)
+- Python 3.10 – 3.13 (Python 3.13 embedded via virtual environment) [Python](https://www.python.org/downloads/)
+- Pip command support [Pip](https://pip.pypa.io/en/stable/installation/)
+- Git command support [Git](https://github.com/git-guides/install-git)
 - [Optional] NVIDIA GPU with CUDA 11.8+ for GPU acceleration
 
 ---
