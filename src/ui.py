@@ -4,15 +4,17 @@ from tkinter import ttk, filedialog, messagebox
 import threading
 from translations import UI_TEXT
 from transcriber import transcribe
+from config import load as load_cfg, save as save_cfg
 
 
 class WhisperGUI(tk.Tk):
     def __init__(self):
         super().__init__()
+        self.cfg = load_cfg()
 
         # ─── 1) Set explicit AppUserModelID  (task‑bar icon) ───
         try:
-            myappid = u"Whisper.GUI.v0.1"        # any unique string
+            myappid = u"Whisper.GUI.v0.0.2"        # any unique string
             ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
         except Exception:
             pass                                 # non‑Windows – silently ignore
@@ -30,8 +32,14 @@ class WhisperGUI(tk.Tk):
             print("Icon load failed:", e)
 
         # … the rest of your original __init__ …
-        self.ui_lang = "zh"
+        self.ui_lang = self.cfg.get("ui_lang", "en")
         self._build_ui()
+
+    def _switch(self, lang):
+        self.ui_lang = lang
+        self.cfg["ui_lang"] = lang      # 更新配置
+        save_cfg(self.cfg)              # 写磁盘
+        self._build_ui()   
 
     def _build_ui(self):
         self.texts = UI_TEXT[self.ui_lang]
@@ -83,10 +91,6 @@ class WhisperGUI(tk.Tk):
         self.prog = ttk.Progressbar(f, orient='horizontal', length=400, mode='determinate')
         self.prog.grid(row=4, column=0, columnspan=3, pady=(0,10))
         f.columnconfigure(1, weight=1)
-
-    def _switch(self, lang):
-        self.ui_lang = lang
-        self._build_ui()
 
     def _show_about(self):
         messagebox.showinfo(self.texts['about_title'],
