@@ -2,7 +2,7 @@
 
 ## 下载
 
-前往 [Releases](https://github.com/yourname/whisper-gui/releases) 下载最新的 `WhisperGUI.exe`。
+前往 [Releases](https://github.com/TBSKBJustin/whisper-gui/releases) 下载最新的 `WhisperGUI.exe`。
 
 ## 使用
 
