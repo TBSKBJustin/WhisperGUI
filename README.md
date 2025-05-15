@@ -34,8 +34,8 @@
    - Select UI language (English / 简体中文)
    - Choose installation directory
    - Choose **PyTorch version**:
-     - `CPU-only` (≈200MB download)
-     - `GPU-enabled (CUDA)` (≈1.5GB download; requires CUDA 11.8+)
+     - `CPU-only` (≈1.5GB download)
+     - `GPU-enabled (CUDA)` (≈6GB download; requires CUDA 11.8+)
 3. Installer will:
    - Create a Python virtual environment
    - Download and install required packages (`torch`, `whisper`, `ffmpeg-python`, etc.)
@@ -43,6 +43,31 @@
    - Desktop shortcut
    - Start menu
    - Or run `{InstallDir}\WhisperGUI.exe`
+
+---
+
+## 🧪 How to Use
+
+<p align="center">
+  <img src="resources/GUI.png" width="600" alt="Whisper GUI Screenshot">
+</p>
+
+### 🧭 English Instructions
+
+1. **Select source file**  
+   Click the top-right `Browse...` to select an audio or video file (e.g., `.mp3`, `.mp4`, `.wav`...).
+
+2. **Choose transcription options**  
+   - **Language**: Choose the language spoken in the file (or leave it as `auto`)
+   - **Model**: Select model size (`tiny`, `base`, `small`, `medium`, `large`)
+   - The model will be downloaded the first time it is used.
+   - **Export format**: Choose between `.txt`, `.srt`, or `.vtt`
+
+3. **Select export location**  
+   Click the second `Browse...` to choose where the transcript or subtitles should be saved.
+
+4. **Start transcribing**  
+   Click `Start` and wait — progress will appear in the bar below. You can cancel any time.
 
 ---
 

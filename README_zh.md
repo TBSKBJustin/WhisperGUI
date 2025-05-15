@@ -46,6 +46,31 @@
 
 ---
 
+## 🧪 如何使用
+
+<p align="center">
+  <img src="resources/GUI_zh.png" width="600" alt="Whisper GUI 截屏">
+</p>
+
+### 🧭 使用说明（中文）
+
+1. **选择源文件**  
+   点击右上角的 `Browse...`，选择你要转录的音频或视频文件（如 `.mp3`、`.mp4`、`.wav` 等）。
+
+2. **设置转录参数**  
+   - **语言（Language）**：选择音频中说的语言，或保持 `auto` 自动识别
+   - **模型（Model）**：选择模型大小（`tiny`, `base`, `small`, `medium`, `large`），模型越大越准确但越慢
+   - 模型将会在第一次使用时下载。
+   - **导出格式（Export format）**：可选 `.txt`、`.srt` 或 `.vtt`
+
+3. **选择导出位置**  
+   点击第二个 `Browse...` 选择转录或字幕的保存路径。
+
+4. **开始转录**  
+   点击 `Start` 开始，进度条会显示处理进度。可随时点击 `Cancel` 取消。
+
+---
+
 ## 🧠 工作原理
 
 本图形界面封装了 [OpenAI Whisper](https://github.com/openai/whisper) 模型，简化用户操作：
