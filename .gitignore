@@ -6,8 +6,12 @@ venv/
 
 # PyInstaller build
 build/
+dist/
 *.spec
 
 # VSCode, PyCharm
 .vscode/
 .idea/
+
+WhisperGUI_Installer.exe
+start_venv.bat
