@@ -63,7 +63,7 @@
    - Choose installation directory
    - Choose **PyTorch version**:
      - `CPU-only` (≈1.5GB download)
-     - `GPU-enabled (CUDA)` (≈6GB download; requires CUDA 11.8+)
+     - `GPU-enabled (CUDA)` (≈5.5GB download; requires CUDA 11.8+)
 3. Installer will:
    - Create a Python virtual environment
    - Download and install required packages (`torch`, `whisper`, `ffmpeg-python`, etc.)
