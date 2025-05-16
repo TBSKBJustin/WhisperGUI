@@ -63,7 +63,7 @@
    - 选择安装目录
    - 选择 PyTorch 版本：
      - `CPU-only`（≈1.5GB 下载）
-     - `GPU-enabled (CUDA)`（≈6GB 下载；需安装 CUDA 11.8）
+     - `GPU-enabled (CUDA)`（≈5.5GB 下载；需安装 CUDA 11.8）
 3. 安装器将自动完成以下操作：
    - 创建 Python 虚拟环境
    - 下载并安装依赖包（如 `torch`, `whisper`, `ffmpeg-python` 等）
