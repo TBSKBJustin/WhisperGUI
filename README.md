@@ -4,8 +4,6 @@
   <img src="resources/icon.png" alt="Whisper GUI Icon" width="96" height="96">
 </p>
 
-
-
 <p align="center">
     <a href="https://github.com/TBSKBJustin/WhisperGUI/stargazers" style="text-decoration:none" >
         <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/TBSKBJustin/WhisperGUI">
