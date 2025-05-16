@@ -1,10 +1,6 @@
 # Whisper GUI
 
 <p align="center">
-  <img src="resources/icon.png" width="96" height="96" alt="Whisper GUI Icon">
-</p>
-
-<p align="center">
     <a href="https://github.com/TBSKBJustin/WhisperGUI/stargazers" style="text-decoration:none" >
         <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/TBSKBJustin/WhisperGUI">
     </a>
@@ -17,6 +13,10 @@
     <a href="https://github.com/TBSKBJustin/WhisperGUI/blob/main/LICENSE" style="text-decoration:none" >
         <img alt="GitHub" src="https://img.shields.io/github/license/TBSKBJustin/WhisperGUI">
     </a>
+</p>
+
+<p align="center">
+  <img src="resources/icon.png" width="96" height="96" alt="Whisper GUI Icon">
 </p>
 
 > 🇺🇸 English Documentation (current) | 📘 [简体中文](./README_zh.md)
