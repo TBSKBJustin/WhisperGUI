@@ -1,8 +1,9 @@
 # Whisper GUI
 
 <p align="center">
-  ![Whisper GUI Icon](resources/icon.png)
+  <img src="resources/icon.png" alt="Whisper GUI Icon" width="96" height="96">
 </p>
+
 
 
 <p align="center">
