@@ -21,8 +21,8 @@
 - Windows 10 或 11（64位）
 - 需联网以下载依赖（首次安装时）
 - Python 3.10 – 3.13 [Python安装](https://www.python.org/downloads/)
-- Pip 指令 [Pip安装](https://pip.pypa.io/en/stable/installation/)
-- Git 指令 [Git安装](https://github.com/git-guides/install-git)
+- Pip 指令 `Python自带`
+- Git 指令 [Git安装](https://git-scm.com/)
 - 【可选】支持 CUDA 11.8+ 的 NVIDIA GPU，可加速转录 [Cuda安装](https://developer.nvidia.com/cuda-toolkit)
 
 ---
