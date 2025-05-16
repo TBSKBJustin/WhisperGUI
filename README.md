@@ -1,6 +1,9 @@
 # Whisper GUI
 
-![index.png](resources/icon.png)
+<p align="center">
+  ![Whisper GUI Icon](resources/icon.png)
+</p>
+
 
 <p align="center">
     <a href="https://github.com/TBSKBJustin/WhisperGUI/stargazers" style="text-decoration:none" >
