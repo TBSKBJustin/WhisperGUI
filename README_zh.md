@@ -21,7 +21,7 @@
 
 > [English](./README.md) | 简体中文（当前）
 
-**Whisper GUI** 是一个轻量级的桌面应用程序，使用 OpenAI 的 Whisper 模型对音频和视频文件进行转录 —— 无需任何命令行知识。
+**Whisper GUI** 是一个轻量级的桌面应用程序，使用 OpenAI 的 Whisper 模型对音频和视频文件进行转录并自动生成字幕文件 —— 无需任何命令行知识。
 
 - 支持 MP4、MP3、WAV、FLAC、M4A 等格式
 - 多语言支持：可选择转录语言 + 导出字幕格式（TXT/SRT/VTT）
