@@ -30,6 +30,19 @@
 ## 🚀 安装说明
 
 1. **下载**最新版安装包 [`WhisperGUI_Installer.exe`](https://github.com/TBSKBJustin/WhisperGUI/releases)
+
+<p align="left">
+    <a href="https://github.com/TBSKBJustin/WhisperGUI/releases/latest" style="text-decoration:none">
+       <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/TBSKBJustin/whisperGUI">
+    </a>
+    <a href="https://github.com/TBSKBJustin/WhisperGUI/releases/latest" style="text-decoration:none">
+       <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/TBSKBJustin/WhisperGUI">
+    </a>
+    <a href="https://github.com/TBSKBJustin/WhisperGUI/releases" style="text-decoration:none">
+       <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/TBSKBJustin/WhisperGUI/total">
+    </a>
+</p>
+
 2. 运行安装程序，依提示操作：
    - 选择界面语言（English / 简体中文）
    - 选择安装目录
