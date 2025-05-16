@@ -19,7 +19,7 @@
     </a>
 </p>
 
-> 🇺🇸 [English Documentation](./README.md) | 简体中文（当前）
+> [English](./README.md) | 简体中文（当前）
 
 **Whisper GUI** 是一个轻量级的桌面应用程序，使用 OpenAI 的 Whisper 模型对音频和视频文件进行转录 —— 无需任何命令行知识。
 
