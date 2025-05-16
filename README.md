@@ -19,19 +19,19 @@
     </a>
 </p>
 
-> 🇺🇸 English Documentation (current) | 📘 [简体中文](./README_zh.md)
+> English Documentation (current) | [简体中文](./README_zh.md)
 
 **Whisper GUI** is a lightweight desktop application for transcribing audio and video files using OpenAI's Whisper model — no command-line knowledge required.
 
-- 🎧 Supports MP4, MP3, WAV, FLAC, M4A, and more
-- 🌍 Multilingual: Choose transcription language + subtitle format (TXT/SRT/VTT)
-- 🧠 Model selection (tiny → large) for speed vs. accuracy
-- ⚡ GPU or CPU selectable during installation
-- 📦 Lightweight installer (under 30MB) downloads only what you need
+- Supports MP4, MP3, WAV, FLAC, M4A, and more
+- Multilingual: Choose transcription language + subtitle format (TXT/SRT/VTT)
+- Model selection (tiny → large) for speed vs. accuracy
+- GPU or CPU selectable during installation
+- Lightweight installer (under 30MB) downloads only what you need
 
 ---
 
-## 💻 System Requirements
+## System Requirements
 
 - Windows 10 or 11 (64-bit)
 - Internet connection (for one-time dependency download)
@@ -42,7 +42,7 @@
 
 ---
 
-## 🚀 Installation
+## Installation
 
 1. **Download** the latest `WhisperGUI_Installer.exe` from [Releases](https://github.com/TBSKBJustin/WhisperGUI/releases)
 
@@ -74,13 +74,13 @@
 
 ---
 
-## 🧪 How to Use
+## How to Use
 
 <p align="center">
   <img src="GitHub/GUI.png" width="600" alt="Whisper GUI Screenshot">
 </p>
 
-### 🧭 Instructions
+### Instructions
 
 1. **Select source file**  
    Click the top-right `Browse...` to select an audio or video file (e.g., `.mp3`, `.mp4`, `.wav`...).
@@ -99,7 +99,7 @@
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 This GUI wraps the [OpenAI Whisper](https://github.com/openai/whisper) speech recognition model in a user-friendly interface.
 
@@ -111,7 +111,7 @@ This GUI wraps the [OpenAI Whisper](https://github.com/openai/whisper) speech re
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 ### “I get an error saying `torch` or `whisper` not found after install.”
 - This likely means the install process failed.
@@ -131,7 +131,7 @@ pip install --upgrade whisper torch
 
 ---
 
-## 🛠 Developer Info
+## Developer Info
 
 - Language: Python 3.13
 - GUI: Tkinter
@@ -140,13 +140,13 @@ pip install --upgrade whisper torch
 
 ---
 
-## 📄 License
+## License
 
-MIT License © 2024 Justin
+MIT License © 2025 Justin
 
 ---
 
-## 🌟 Credits
+## Credits
 
 - [OpenAI Whisper](https://github.com/openai/whisper)
 - [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)

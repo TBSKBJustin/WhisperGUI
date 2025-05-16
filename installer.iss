@@ -1,4 +1,4 @@
-; ========= Whisper GUI (source‑mode) installer =========
+
 
 [Setup]
 AppName=Whisper GUI
@@ -16,11 +16,11 @@ Name: "en";  MessagesFile: "compiler:Default.isl"
 Name: "chs"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 
 [Files]
-; 复制启动器 exe
+
 Source: "dist\WhisperGUI.exe"; DestDir: "{app}"; Flags: ignoreversion
-; 复制源码
+
 Source: "src\*"; DestDir: "{app}\src"; Flags: recursesubdirs createallsubdirs ignoreversion
-; 复制图标
+
 Source: "resources\icon.ico"; DestDir: "{app}\resources"; Flags: ignoreversion
 
 [Icons]
@@ -40,7 +40,7 @@ procedure InitializeWizard();
 begin
   IsCN := (ActiveLanguage = 'chs');
 
-  { --- PyTorch 版本选择页 --- }
+
   if IsCN then
     PyPage := CreateInputOptionPage(
       wpWelcome, '选择 PyTorch 版本', '请选择要安装的 PyTorch 版本',
@@ -70,11 +70,11 @@ begin
 end;
 
 [Run]
-; ① 创建 venv（保持不变）
+
 Filename: "{cmd}"; Parameters: "/C py -3 -m venv ""{app}\venv"""; Flags: runhidden waituntilterminated
 
-; ② 安装 PyTorch  (CPU / GPU)
+
 Filename: "{cmd}"; Parameters: "/C ""{app}\venv\Scripts\python.exe"" -m pip install torch torchvision torchaudio{code:ExtraIndex} --extra-index-url https://pypi.org/simple ffmpeg-python git+https://github.com/openai/whisper.git"; Flags: waituntilterminated
 
-; ④ 启动程序
+
 Filename: "{app}\WhisperGUI.exe"; Description: "{cm:LaunchProgram,Whisper GUI}"; Flags: nowait postinstall skipifsilent

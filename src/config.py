@@ -1,4 +1,3 @@
-# config.py
 import json, os, pathlib
 
 CFG_DIR  = pathlib.Path(os.getenv("APPDATA", "~")).expanduser() / "WhisperGUI"

@@ -19,19 +19,19 @@
     </a>
 </p>
 
-> 🇺🇸 [English Documentation](./README.md) | 📘 简体中文（当前）
+> 🇺🇸 [English Documentation](./README.md) | 简体中文（当前）
 
 **Whisper GUI** 是一个轻量级的桌面应用程序，使用 OpenAI 的 Whisper 模型对音频和视频文件进行转录 —— 无需任何命令行知识。
 
-- 🎧 支持 MP4、MP3、WAV、FLAC、M4A 等格式
-- 🌍 多语言支持：可选择转录语言 + 导出字幕格式（TXT/SRT/VTT）
-- 🧠 模型可选（从 tiny 到 large），平衡速度与准确性
-- ⚡ 安装时可选择使用 GPU 或 CPU
-- 📦 安装包小于 30MB，按需下载依赖
+- 支持 MP4、MP3、WAV、FLAC、M4A 等格式
+- 多语言支持：可选择转录语言 + 导出字幕格式（TXT/SRT/VTT）
+- 模型可选（从 tiny 到 large），平衡速度与准确性
+- 安装时可选择使用 GPU 或 CPU
+- 安装包小于 30MB，按需下载依赖
 
 ---
 
-## 💻 系统要求
+## 系统要求
 
 - Windows 10 或 11（64位）
 - 需联网以下载依赖（首次安装时）
@@ -42,7 +42,7 @@
 
 ---
 
-## 🚀 安装说明
+## 安装说明
 
 1. **下载**最新版安装包 [`WhisperGUI_Installer.exe`](https://github.com/TBSKBJustin/WhisperGUI/releases)
 
@@ -74,13 +74,13 @@
 
 ---
 
-## 🧪 如何使用
+## 如何使用
 
 <p align="center">
   <img src="GitHub/GUI_zh.png" width="600" alt="Whisper GUI 截屏">
 </p>
 
-### 🧭 使用说明
+### 使用说明
 
 1. **选择源文件**  
    点击右上角的 `浏览...`，选择你要转录的音频或视频文件（如 `.mp3`、`.mp4`、`.wav` 等）。
@@ -99,7 +99,7 @@
 
 ---
 
-## 🧠 工作原理
+## 工作原理
 
 本图形界面封装了 [OpenAI Whisper](https://github.com/openai/whisper) 模型，简化用户操作：
 
@@ -111,7 +111,7 @@
 
 ---
 
-## ❓ 常见问题（FAQ）
+## 常见问题（FAQ）
 
 ### 安装后提示找不到 `torch` 或 `whisper`？
 - 安装过程中可能出现异常，建议：
@@ -130,7 +130,7 @@ pip install --upgrade whisper torch
 ```
 ---
 
-## 🛠 开发信息
+## 开发信息
 
 - 编程语言: Python 3.13
 - 图形界面: Tkinter
@@ -139,13 +139,13 @@ pip install --upgrade whisper torch
 
 ---
 
-## 📄 许可证
+## 许可证
 
-MIT License © 2024 Justin
+MIT License © 2025 Justin
 
 ---
 
-## 🌟 鸣谢
+## 鸣谢
 
 - [OpenAI Whisper](https://github.com/openai/whisper)
 - [ffmpeg-python](https://github.com/kkroening/ffmpeg-python)

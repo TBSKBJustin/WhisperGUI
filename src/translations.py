@@ -1,4 +1,3 @@
-# translations.py
 UI_TEXT = {
     'en': {
         'menu_file':    'File',    'menu_exit':    'Exit',

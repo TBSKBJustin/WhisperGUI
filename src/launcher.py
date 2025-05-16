@@ -1,5 +1,3 @@
-# launcher.py  (no console, keeps log handling)
-
 import os, sys, subprocess, ctypes, webbrowser
 
 base = os.path.dirname(os.path.abspath(sys.argv[0]))
@@ -15,7 +13,6 @@ for path, name in [(py, "Python runtime"), (main, "main.py")]:
         alert(f"{name} not found:\n{path}")
         sys.exit(1)
 
-# CREATE_NO_WINDOW keeps task‑bar icon = your EXE icon
 flags = subprocess.CREATE_NO_WINDOW
 
 proc = subprocess.Popen([py, main], cwd=base, creationflags=flags)
