@@ -131,15 +131,22 @@ class WhisperGUI(tk.Tk):
         ).start()
 
     def _update_progress(self, v):
-        self.prog['value'] = v
+        # Schedule UI update on the main thread for thread safety
+        self.after(0, lambda: self.prog.configure(value=v))
 
     def _run_transcribe(self, src, out_dir, lang, model, typ, ui_lang, prog_cb):
         res = transcribe(src, out_dir, lang, model, typ, ui_lang, prog_cb)
-        if 'error' in res:
-            messagebox.showerror("Error", res['error'])
-        else:
-            messagebox.showinfo("Done", f"Saved: {res['path']}")
-        self.cancel_b.state(['disabled']); self.start_b.state(['!disabled'])
+
+        def finish():
+            if 'error' in res:
+                messagebox.showerror("Error", res['error'])
+            else:
+                messagebox.showinfo("Done", f"Saved: {res['path']}")
+            self.cancel_b.state(['disabled'])
+            self.start_b.state(['!disabled'])
+
+        # Interact with UI on the main thread
+        self.after(0, finish)
 
     def _on_cancel(self):
 
