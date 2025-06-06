@@ -28,12 +28,20 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
     progress_callback(20)
     try:
         lang_arg = None if str(lang).lower() == 'auto' else lang
-        result = model.transcribe(src, language=lang_arg)
+
+        def cb(p):
+            try:
+                pct = 20 + 60 * float(p)
+                progress_callback(min(80, pct))
+            except Exception:
+                pass
+
+        result = model.transcribe(src, language=lang_arg, progress_callback=cb)
     except Exception as e:
         return {'error': f"Transcription failed: {e}"}
 
 
-    progress_callback(60)
+    progress_callback(80)
     base = os.path.splitext(os.path.basename(src))[0]
     out_path = os.path.join(out_dir, f"{base}.{export_type}")
     segments = result.get('segments', [])
@@ -43,6 +51,7 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
         else:
             if export_type == 'vtt':
                 f.write("WEBVTT\n\n")
+            total = max(len(segments), 1)
             for i, seg in enumerate(segments, start=1):
                 start, end, text = seg['start'], seg['end'], seg['text'].strip()
                 if export_type == 'srt':
@@ -53,6 +62,8 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
                     f.write(f"{i}\n")
                     f.write(f"{format_vtt_time(start)} --> {format_vtt_time(end)}\n")
                     f.write(text + "\n\n")
+
+                progress_callback(80 + 20 * (i / total))
 
 
     progress_callback(100)

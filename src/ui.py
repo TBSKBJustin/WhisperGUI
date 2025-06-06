@@ -14,6 +14,7 @@ class _StreamRedirector:
     def write(self, text):
         if self.orig:
             self.orig.write(text)
+            self.orig.flush()
         if getattr(self.gui, "_log_file", None):
             self.gui._log_file.write(text)
             self.gui._log_file.flush()
@@ -114,7 +115,7 @@ class WhisperGUI(tk.Tk):
         self.cancel_b = ttk.Button(f, text=self.texts['cancel'], command=self._on_cancel, state='disabled')
         self.cancel_b.grid(row=3, column=1, padx=(60,0), pady=10)
 
-        self.prog = ttk.Progressbar(f, orient='horizontal', length=400, mode='determinate')
+        self.prog = ttk.Progressbar(f, orient='horizontal', length=400, mode='determinate', maximum=100)
         self.prog.grid(row=4, column=0, columnspan=3, pady=(0,10))
 
         self.log_t = scrolledtext.ScrolledText(f, height=8, state='disabled')
@@ -164,7 +165,10 @@ class WhisperGUI(tk.Tk):
 
     def _update_progress(self, v):
         # Schedule UI update on the main thread for thread safety
-        self.after(0, lambda: self.prog.configure(value=v))
+        def inner():
+            self.prog.configure(value=v)
+            self.prog.update_idletasks()
+        self.after(0, inner)
 
     def _append_log(self, text):
         def inner():
