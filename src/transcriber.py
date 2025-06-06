@@ -28,20 +28,12 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
     progress_callback(20)
     try:
         lang_arg = None if str(lang).lower() == 'auto' else lang
-
-        def cb(p):
-            try:
-                pct = 20 + 60 * float(p)
-                progress_callback(min(80, pct))
-            except Exception:
-                pass
-
-        result = model.transcribe(src, language=lang_arg, progress_callback=cb)
+        result = model.transcribe(src, language=lang_arg)
     except Exception as e:
         return {'error': f"Transcription failed: {e}"}
 
 
-    progress_callback(80)
+    progress_callback(60)
     base = os.path.splitext(os.path.basename(src))[0]
     out_path = os.path.join(out_dir, f"{base}.{export_type}")
     segments = result.get('segments', [])
@@ -63,7 +55,7 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
                     f.write(f"{format_vtt_time(start)} --> {format_vtt_time(end)}\n")
                     f.write(text + "\n\n")
 
-                progress_callback(80 + 20 * (i / total))
+                progress_callback(60 + 40 * (i / total))
 
 
     progress_callback(100)
