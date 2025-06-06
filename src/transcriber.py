@@ -27,7 +27,8 @@ def transcribe(src, out_dir, lang, model_size, export_type, ui_lang, progress_ca
 
     progress_callback(20)
     try:
-        result = model.transcribe(src, language=lang)
+        lang_arg = None if str(lang).lower() == 'auto' else lang
+        result = model.transcribe(src, language=lang_arg)
     except Exception as e:
         return {'error': f"Transcription failed: {e}"}
 
