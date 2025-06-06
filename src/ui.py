@@ -1,9 +1,29 @@
 import os, sys, ctypes, tkinter as tk
-from tkinter import ttk, filedialog, messagebox
+from tkinter import ttk, filedialog, messagebox, scrolledtext
 import threading
 from translations import UI_TEXT
 from transcriber import transcribe
 from config import load as load_cfg, save as save_cfg
+
+
+class _StreamRedirector:
+    def __init__(self, gui, orig):
+        self.gui = gui
+        self.orig = orig
+
+    def write(self, text):
+        if self.orig:
+            self.orig.write(text)
+        if getattr(self.gui, "_log_file", None):
+            self.gui._log_file.write(text)
+            self.gui._log_file.flush()
+        self.gui._append_log(text)
+
+    def flush(self):
+        if self.orig:
+            self.orig.flush()
+        if getattr(self.gui, "_log_file", None):
+            self.gui._log_file.flush()
 
 
 class WhisperGUI(tk.Tk):
@@ -33,6 +53,13 @@ class WhisperGUI(tk.Tk):
 
         self.ui_lang = self.cfg.get("ui_lang", "en")
         self._build_ui()
+
+        # Redirect stdout and stderr to the log widget
+        self._log_file = open("runtime_log.txt", "a", encoding="utf-8")
+        self._orig_stdout = sys.stdout
+        self._orig_stderr = sys.stderr
+        sys.stdout = _StreamRedirector(self, self._orig_stdout)
+        sys.stderr = _StreamRedirector(self, self._orig_stderr)
 
     def _switch(self, lang):
         self.ui_lang = lang
@@ -89,7 +116,12 @@ class WhisperGUI(tk.Tk):
 
         self.prog = ttk.Progressbar(f, orient='horizontal', length=400, mode='determinate')
         self.prog.grid(row=4, column=0, columnspan=3, pady=(0,10))
+
+        self.log_t = scrolledtext.ScrolledText(f, height=8, state='disabled')
+        self.log_t.grid(row=5, column=0, columnspan=3, sticky='nsew')
+
         f.columnconfigure(1, weight=1)
+        f.rowconfigure(5, weight=1)
 
     def _show_about(self):
         messagebox.showinfo(self.texts['about_title'],
@@ -134,6 +166,14 @@ class WhisperGUI(tk.Tk):
         # Schedule UI update on the main thread for thread safety
         self.after(0, lambda: self.prog.configure(value=v))
 
+    def _append_log(self, text):
+        def inner():
+            self.log_t['state'] = 'normal'
+            self.log_t.insert(tk.END, text)
+            self.log_t.see(tk.END)
+            self.log_t['state'] = 'disabled'
+        self.after(0, inner)
+
     def _run_transcribe(self, src, out_dir, lang, model, typ, ui_lang, prog_cb):
         res = transcribe(src, out_dir, lang, model, typ, ui_lang, prog_cb)
 
@@ -151,4 +191,15 @@ class WhisperGUI(tk.Tk):
     def _on_cancel(self):
 
         messagebox.showinfo("Info", "Cannot cancel mid-task yet.")
+
+    def destroy(self):
+        sys.stdout = self._orig_stdout
+        sys.stderr = self._orig_stderr
+        if getattr(self, "_log_file", None):
+            self._log_file.close()
+        super().destroy()
+
+    def quit(self):
+        super().quit()
+        self.destroy()
 
